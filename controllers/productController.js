@@ -59,7 +59,7 @@ const getAllProducts = async (req, res) => {
     try {
 
 
-        const products = await Product.find().populate('sellers', 'firstName email');
+        const products = await Product.find().populate('seller', 'firstName email');
 
         if (!products) {
             return res.status(404).json({
